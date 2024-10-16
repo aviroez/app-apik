@@ -1,0 +1,82 @@
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "com.bugsnag.android.gradle"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    signingConfigs {
+        releaseConfig {
+            storeFile file("keystore.jks")
+            storePassword "mbtrisakti2019"
+            keyAlias "mbtrisakti"
+            keyPassword "mbtrisakti2019"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.updkbarito.apik"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 44
+        versionName "1.1.4"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+        manifestPlaceholders = [
+                onesignal_app_id: 'e3fb49b5-3a21-41c5-8549-795523691ab5',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.android.play:core:1.7.3'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-analytics:17.4.3'
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.1'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'com.github.gcacace:signature-pad:1.3.1'
+    implementation 'com.caverock:androidsvg-aar:1.4'
+    implementation 'com.onesignal:OneSignal:3.15.4'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "com.bugsnag:bugsnag-android:5.+"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

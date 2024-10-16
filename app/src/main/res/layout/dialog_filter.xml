@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tampilkan Berdasarkan:"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio_hari_ini"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hari Ini"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textCursorDrawable="@color/colorPrimary"
+            app:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radio_minggu_ini"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Minggu Ini"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textCursorDrawable="@color/colorPrimary"
+            app:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radio_bulan_ini"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bulan Ini"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textCursorDrawable="@color/colorPrimary"
+            app:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radio_tahun_ini"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tahun Ini"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimary"
+            android:textCursorDrawable="@color/colorPrimary"
+            app:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radio_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tanggal"
+            android:visibility="gone"
+            app:buttonTint="@color/colorPrimary" />
+
+        <LinearLayout
+            android:id="@+id/layout_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Dari Tanggal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/text_tanggal_dari"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Sampai Tanggal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/text_tanggal_sampai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <DatePicker
+                    android:id="@+id/calendar_view_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:visibility="gone" />
+
+                <DatePicker
+                    android:id="@+id/calendar_view_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Urutkan berdasarkan:"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio_terbaru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Terbaru"
+            app:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radio_terlama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terlama"
+            app:buttonTint="@color/colorPrimary" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/layout_lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_cari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/cari">
+
+    </com.google.android.material.button.MaterialButton>
+</LinearLayout>

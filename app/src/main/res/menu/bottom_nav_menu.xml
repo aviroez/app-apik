@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_waiting"
+        android:title="@string/ijin_waiting" />
+
+    <item
+        android:id="@+id/navigation_finish"
+        android:icon="@null"
+        android:title="@string/ijin_finish" />
+
+    <item
+        android:id="@+id/navigation_closing"
+        android:icon="@null"
+        android:title="@string/ijin_closing" />
+
+</menu>
